@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUTA CRC Support Portal</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#1e40af', secondary: '#dc2626' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+
+    <!-- Landing Page -->
+    <div id="landing-page" class="min-h-screen">
+        <div class="relative min-h-screen bg-cover bg-center"
+            style="background-image: url('https://readdy.ai/api/search-image?query=Modern%20university%20campus%20with%20students%20walking%2C%20clean%20architecture%2C%20bright%20daylight%2C%20professional%20academic%20environment%2C%20welcoming%20atmosphere%2C%20educational%20institution%20setting%2C%20contemporary%20buildings%2C%20open%20spaces&width=1920&height=1080&seq=001&orientation=landscape')">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-indigo-800/60"></div>
+
+            <div class="relative z-10 flex flex-col min-h-screen">
+                <!-- Header -->
+                <header class="px-6 py-8">
+                    <div class="max-w-7xl mx-auto flex items-center justify-between">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center">
+                                <img src="FUTA's Logo.jpeg" alt="My Logo"
+                                    class="w-full h-full rounded-full object-cover"
+                                    style="height:auto; border-radius: 50px;">
+                            </div>
+
+                            <div class="text-white">
+                                <h1 class="text-xl font-bold">FUTA</h1>
+                                <p class="text-sm opacity-90">Support Portal</p>
+                            </div>
+                        </div>
+
+                        <nav class="hidden md:flex space-x-8 text-white">
+                            <button onclick="showAbout()" class="transition-colors hover:text-blue-200">
+                                About
+                            </button>
+
+                            <button onclick="showContact()" class="transition-colors hover:text-blue-200">
+                                Contact
+                            </button>
+                        </nav>
+
+                    </div>
+                </header>
+
+                <!-- Hero Section -->
+                <main class="flex-1 flex items-center justify-center px-6">
+                    <div class="max-w-4xl mx-auto text-center text-white">
+                        <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                            Welcome to FUTA CRC <br>
+                            <span class="text-blue-200">Support Portal</span>
+                        </h1>
+                        <p class="text-xl md:text-2xl mb-12 opacity-90 max-w-3xl mx-auto">
+                            Submit complaints, requests, and get assistance from our dedicated support team.
+                            Your voice matters in improving our university experience.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                            <button onclick="showUserLogin()"
+                                class="group bg-white text-primary px-8 py-4 !rounded-button text-lg font-semibold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg whitespace-nowrap flex items-center space-x-3">
+                                <div class="w-6 h-6 flex items-center justify-center">
+                                    <i class="ri-user-line text-xl"></i>
+                                </div>
+                                <span>Student Login</span>
+                            </button>
+
+                            <button onclick="showStaffLogin()"
+                                class="group bg-primary text-white px-8 py-4 !rounded-button text-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg whitespace-nowrap flex items-center space-x-3">
+                                <div class="w-6 h-6 flex items-center justify-center">
+                                    <i class="ri-user-line text-xl"></i>
+                                </div>
+                                <span>Staff Login</span>
+                            </button>
+                        </div>
+                    </div>
+                </main>
+
+                <!-- Footer -->
+                <footer class="px-6 py-8">
+                    <div class="max-w-7xl mx-auto text-center text-white opacity-80">
+                        <div class="flex justify-center space-x-6 mt-4 text-sm">
+                            <a href="#" class="hover:text-blue-200">Privacy Policy</a>
+                            <a href="#" class="hover:text-blue-200">Terms of Service</a>
+                            <a href="#" class="hover:text-blue-200">Help Center</a>
+                        </div>
+                        <br>
+                        <p>&copy; 2025 Federal University of Technology, Akure. All rights reserved.</p>
+                    </div>
+                </footer>
+
+                <div>
+                    <button onclick="showAdminLogin()"
+                        class="group bg-primary text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg whitespace-nowrap flex items-center space-x-3">
+                        <div class="w-0 h-6 flex items-center justify-center">
+                            <i class="ri-admin-line text-xl"></i>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="about-section" class="hidden p-6 bg-white rounded shadow-md max-w-3xl mx-auto mt-6 text-gray-800">
+        <button onclick="showLanding()"
+            class="fixed top-4 left-4 text-2xl font-bold hover:text-gray-900 text-white text-sm flex items-center space-x-2 z-50 bg-blue-700 px-3 py-2 rounded shadow">
+            <div class="w-4 h-4 flex items-center justify-center">
+                <i class="ri-arrow-left-line"></i>
+            </div>
+        </button>
+        <h2 class="text-3xl font-bold mb-4 text-blue-700">About FUTA Ticketing System</h2>
+
+        <p class="mb-4 text-lg leading-relaxed">
+            Welcome to the FUTA Ticketing Management System, a dedicated platform built to ensure your voice is heard
+            and your concerns are addressed promptly.
+        </p>
+
+        <p class="mb-4">
+            This system was created to provide both <strong>students</strong> and <strong>staff</strong> of the Federal
+            University of Technology, Akure (FUTA) with a secure, simple, and transparent way to report complaints,
+            request services, and share concerns with the CRC (Computer Resource Centre). Whether it’s an academic,
+            administrative, technical, or facility-related issue, this platform connects you to the right team for a
+            timely resolution.
+        </p>
+
+        <h3 class="text-xl font-semibold mt-6 mb-2 text-gray-700">🔍 How It Works</h3>
+        <ul class="list-disc list-inside mb-4 text-gray-700">
+            <li>Log in using your official student or staff credentials</li>
+            <li>Submit your complaint or request in a few easy steps</li>
+            <li>Receive a unique ticket number for tracking</li>
+            <li>Stay updated as your issue is reviewed and resolved</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold mt-6 mb-2 text-gray-700">👥 Who Manages the System?</h3>
+        <p class="mb-4">
+            The platform is managed by the <strong>CRC team</strong> and supervised by designated school administrators,
+            who ensure that each ticket is assigned to the appropriate department and addressed with care.
+        </p>
+
+        <h3 class="text-xl font-semibold mt-6 mb-2 text-gray-700">🔒 Your Privacy Matters</h3>
+        <p class="mb-4">
+            Every complaint is treated with utmost confidentiality. Your information is never shared beyond the
+            authorized team responsible for handling your request.
+        </p>
+
+        <h3 class="text-xl font-semibold mt-6 mb-2 text-gray-700">✨ Why Use This Platform?</h3>
+        <ul class="list-disc list-inside mb-4 text-gray-700">
+            <li>Easy-to-use complaint submission process</li>
+            <li>Real-time tracking of ticket status</li>
+            <li>Faster resolution through streamlined routing</li>
+            <li>Transparent communication with the responsible teams</li>
+            <li>Improved trust and accountability within the university system</li>
+        </ul>
+
+        <p class="mt-6 italic text-gray-600">
+            Together, we are building a better support system — one complaint at a time.<br>
+            If you have something to report, speak up. <strong>We are here to listen.</strong>
+        </p>
+    </div>
+
+    <!-- Contact Form Section -->
+    <div id="contact-section" class="p-6 bg-white rounded shadow-md max-w-3xl mx-auto mt-6 hidden">
+        <button onclick="showLanding()"
+            class="fixed top-4 left-4 text-2xl font-bold hover:text-gray-900 text-white text-sm flex items-center space-x-2 z-50 bg-blue-700 px-3 py-2 rounded shadow">
+            <div class="w-4 h-4 flex items-center justify-center">
+                <i class="ri-arrow-left-line"></i>
+            </div>
+        </button>
+
+        <h2 class="text-2xl font-semibold mb-4 text-gray-800">Contact Us</h2>
+        <p class="text-gray-600 mb-4">Have questions, technical issues, or need help using the platform? We’re here to
+            support you.</p>
+
+        <form id="contact-form" class="space-y-4">
+            <div>
+                <label for="fullName" class="block text-sm font-medium text-gray-700">Full Name</label>
+                <input type="text" id="fullName" name="fullName" required
+                    class="mt-1 block w-full border border-gray-300 rounded-md p-2">
+            </div>
+
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">Email / Phone Number</label>
+                <input type="text" id="email" name="email" required
+                    class="mt-1 block w-full border border-gray-300 rounded-md p-2">
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700">User Type</label>
+                <div class="flex gap-4 mt-1">
+                    <label class="inline-flex items-center">
+                        <input type="radio" name="userType" value="Student" required class="form-radio text-blue-600">
+                        <span class="ml-2">Student</span>
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input type="radio" name="userType" value="Staff" class="form-radio text-blue-600">
+                        <span class="ml-2">Staff</span>
+                    </label>
+                </div>
+            </div>
+
+            <div>
+                <label for="details" class="block text-sm font-medium text-gray-700">Complaint Details</label>
+                <textarea id="details" name="details" required
+                    class="mt-1 block w-full border border-gray-300 rounded-md p-2" rows="4"></textarea>
+            </div>
+
+            <div>
+                <label for="attachment" class="block text-sm font-medium text-gray-700">Attachment (Optional)</label>
+                <input type="file" id="attachment" name="attachment" class="mt-1 block w-full">
+            </div>
+
+            <button onclick="showSuccessPage()" type="submit"
+                class="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Submit</button>
+        </form>
+
+        <ul class="mt-6 text-gray-700">
+            <li>Email: <a href="mailto:crc@futa.edu.ng" class="text-blue-600 hover:underline">crc@futa.edu.ng</a></li>
+            <li>Phone: <a href="tel:0800FUTAHELP" class="text-blue-600 hover:underline">0800-FUTA-HELP</a></li>
+        </ul>
+    </div>
+
+    <!-- Success Page Section (Initially Hidden) -->
+    <div id="success-page" class="p-6 bg-green-100 rounded shadow-md max-w-xl mx-auto mt-6 hidden text-center">
+        <h2 class="text-2xl font-bold text-green-800 mb-4">Thank You!</h2>
+        <p class="text-green-700 mb-6">Your message has been successfully sent. We’ll get back to you shortly.</p>
+        <button onclick="showLanding()" class="bg-green-700 text-white py-2 px-4 rounded hover:bg-green-800">Return to
+            Dashboard</button>
+    </div>
+
+    <!-- User Login Page -->
+    <div id="user-login" class="hidden min-h-screen bg-gray-50 flex items-center justify-center px-6">
+        <div class="max-w-md w-full">
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <div class="text-center mb-8">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <div class="w-8 h-8 flex items-center justify-center">
+                            <i class="ri-user-line text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-900">Student Login</h2>
+                    <p class="text-gray-600 mt-2">Access your support portal</p>
+                </div>
+
+                <form class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Matric Number / Email</label>
+                        <input type="text"
+                            class="w-full px-4 py-3 border border-gray-300 !rounded-button focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                            placeholder="Enter your matric number or email">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                        <div class="relative">
+                            <input type="password"
+                                class="w-full px-4 py-3 border border-gray-300 !rounded-button focus:ring-2 focus:ring-primary focus:border-transparent text-sm pr-12"
+                                placeholder="Enter your password">
+                            <button type="button"
+                                class="absolute right-3 top-1/2 transform -translate-y-1/2 w-6 h-6 flex items-center justify-center text-gray-400 hover:text-gray-600">
+                                <i class="ri-eye-line"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <label class="flex items-center">
+                            <input type="checkbox"
+                                class="w-4 h-4 text-primary border-gray-300 !rounded-button focus:ring-primary">
+                            <span class="ml-2 text-sm text-gray-600">Remember me</span>
+                        </label>
+                        <a href="#" class="text-sm text-primary hover:text-blue-700">Forgot password?</a>
+                    </div>
+
+                    <button type="button" onclick="showUserDashboard()"
+                        class="w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-blue-700 transition-colors whitespace-nowrap">
+                        Sign In
+                    </button>
+
+                    <div class="text-center">
+                        <span class="text-sm text-gray-600">Don't have an account? </span>
+                        <button type="button" onclick="showUserRegister()"
+                            class="text-sm text-primary hover:text-blue-700 font-medium">Register here</button>
+                    </div>
+                </form>
+
+                <button onclick="showLanding()"
+                    class="mt-6 w-full text-gray-500 hover:text-gray-700 text-sm flex items-center justify-center space-x-2">
+                    <div class="w-4 h-4 flex items-center justify-center">
+                        <i class="ri-arrow-left-line"></i>
+                    </div>
+                    <span>Back to Home</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Staff Login Page -->
+    <div id="staff-login" class="hidden min-h-screen bg-gray-50 flex items-center justify-center px-6">
+        <div class="max-w-md w-full">
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <div class="text-center mb-8">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <div class="w-8 h-8 flex items-center justify-center">
+                            <i class="ri-user-line text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-900">Staff Login</h2>
+                    <p class="text-gray-600 mt-2">Access your support portal</p>
+                </div>
+
+                <form class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Staff ID / Email</label>
+                        <input type="text"
+                            class="w-full px-4 py-3 border border-gray-300 !rounded-button focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                            placeholder="Enter your staff ID or Email">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                        <div class="relative">
+                            <input type="password"
+                                class="w-full px-4 py-3 border border-gray-300 !rounded-button focus:ring-2 focus:ring-primary focus:border-transparent text-sm pr-12"
+                                placeholder="Enter your password">
+                            <button type="button"
+                                class="absolute right-3 top-1/2 transform -translate-y-1/2 w-6 h-6 flex items-center justify-center text-gray-400 hover:text-gray-600">
+                                <i class="ri-eye-line"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <label class="flex items-center">
+                            <input type="checkbox"
+                                class="w-4 h-4 text-primary border-gray-300 !rounded-button focus:ring-primary">
+                            <span class="ml-2 text-sm text-gray-600">Remember me</span>
+                        </label>
+                        <a href="#" class="text-sm text-primary hover:text-blue-700">Forgot password?</a>
+                    </div>
+
+                    <button type="button" onclick="showUserDashboard()"
+                        class="w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-blue-700 transition-colors whitespace-nowrap">
+                        Sign In
+                    </button>
+
+                    <div class="text-center">
+                        <span class="text-sm text-gray-600">Don't have an account? </span>
+                        <button type="button" onclick="showStaffRegister()"
+                            class="text-sm text-primary hover:text-blue-700 font-medium">Register here
+                        </button>
+                    </div>
+                </form>
+
+                <button onclick="showLanding()"
+                    class="mt-6 w-full text-gray-500 hover:text-gray-700 text-sm flex items-center justify-center space-x-2">
+                    <div class="w-4 h-4 flex items-center justify-center">
+                        <i class="ri-arrow-left-line"></i>
+                    </div>
+                    <span>Back to Home</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- User Register Page -->
+    <div id="user-register" class="hidden min-h-screen bg-gray-50 flex items-center justify-center px-6 py-12">
+        <div class="max-w-md w-full">
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <div class="text-center mb-8">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <div class="w-8 h-8 flex items-center justify-center">
+                            <i class="ri-user-add-line text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-900">Create Account</h2>
+                    <p class="text-gray-600 mt-2">Join FUTA Support Portal</p>
+                </div>
+
+                <form class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                        <input type="text"
+                            class="w-full px-4 py-3 border border-gray-300 !rounded-button focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                            placeholder="Enter your full name">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Matric Number</label>
+                        <input type="text"
+                            class="w-full px-4 py-3 border border-gray-300 !rounded-button focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                            placeholder="Enter your matric number">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                        <input type="email"
+                            class="w-full px-4 py-3 border border-gray-300 !rounded-button focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                            placeholder="Enter your email address">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                        <input type="password"
+                            class="w-full px-4 py-3 border border-gray-300 !rounded-button focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                            placeholder="Create a password">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Confirm Password</label>
+                        <input type="password"
+                            class="w-full px-4 py-3 border border-gray-300 !rounded-button focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                            placeholder="Confirm your password">
+                    </div>
+
+                    <div class="flex items-start">
+                        <input type="checkbox"
+                            class="w-4 h-4 text-primary border-gray-300 !rounded-button focus:ring-primary mt-1">
+                        <span class="ml-2 text-sm text-gray-600">I agree to the <a href="#"
+                                class="text-primary hover:text-blue-700">Terms & Conditions</a> and <a href="#"
+                                class="text-primary hover:text-blue-700">Privacy Policy</a></span>
+                    </div>
+
+                    <button type="button" onclick="showUserDashboard()"
+                        class="w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-blue-700 transition-colors whitespace-nowrap">
+                        Create Account
+                    </button>
+
+                    <div class="text-center">
+                        <span class="text-sm text-gray-600">Already have an account? </span>
+                        <button type="button" onclick="showUserLogin()"
+                            class="text-sm text-primary hover:text-blue-700 font-medium">Sign in here</button>
+                    </div>
+                </form>
+
+                <button onclick="showLanding()"
+                    class="mt-6 w-full text-gray-500 hover:text-gray-700 text-sm flex items-center justify-center space-x-2">
+                    <div class="w-4 h-4 flex items-center justify-center">
+                        <i class="ri-arrow-left-line"></i>
+                    </div>
+                    <span>Back to Home</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Staff Register Page -->
+    <div id="staff-register" class="hidden min-h-screen bg-gray-50 flex items-center justify-center px-6 py-12">
+        <div class="max-w-md w-full">
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <div class="text-center mb-8">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <div class="w-8 h-8 flex items-center justify-center">
+                            <i class="ri-user-add-line text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-900">Create Account</h2>
+                    <p class="text-gray-600 mt-2">Join FUTA Support Portal</p>
+                </div>
+
+                <form class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                        <input type="text"
+                            class="w-full px-4 py-3 border border-gray-300 !rounded-button focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                            placeholder="Enter your full name">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Staff ID</label>
+                        <input type="text"
+                            class="w-full px-4 py-3 border border-gray-300 !rounded-button focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                            placeholder="Enter your Staff ID">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                        <input type="email"
+                            class="w-full px-4 py-3 border border-gray-300 !rounded-button focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                            placeholder="Enter your email address">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                        <input type="password"
+                            class="w-full px-4 py-3 border border-gray-300 !rounded-button focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                            placeholder="Create a password">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Confirm Password</label>
+                        <input type="password"
+                            class="w-full px-4 py-3 border border-gray-300 !rounded-button focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                            placeholder="Confirm your password">
+                    </div>
+
+                    <div class="flex items-start">
+                        <input type="checkbox"
+                            class="w-4 h-4 text-primary border-gray-300 !rounded-button focus:ring-primary mt-1">
+                        <span class="ml-2 text-sm text-gray-600">I agree to the <a href="#"
+                                class="text-primary hover:text-blue-700">Terms & Conditions</a> and <a href="#"
+                                class="text-primary hover:text-blue-700">Privacy Policy</a></span>
+                    </div>
+
+                    <button type="button" onclick="showUserDashboard()"
+                        class="w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-blue-700 transition-colors whitespace-nowrap">
+                        Create Account
+                    </button>
+
+                    <div class="text-center">
+                        <span class="text-sm text-gray-600">Already have an account? </span>
+                        <button type="button" onclick="showStaffLogin()"
+                            class="text-sm text-primary hover:text-blue-700 font-medium">Sign in here</button>
+                    </div>
+                </form>
+
+                <button onclick="showLanding()"
+                    class="mt-6 w-full text-gray-500 hover:text-gray-700 text-sm flex items-center justify-center space-x-2">
+                    <div class="w-4 h-4 flex items-center justify-center">
+                        <i class="ri-arrow-left-line"></i>
+                    </div>
+                    <span>Back to Home</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- User Dashboard -->
+    <div id="user-dashboard" class="hidden min-h-screen bg-gray-50">
+        <!-- Header -->
+        <header class="bg-white shadow-sm border-b">
+            <div class="max-w-7xl mx-auto px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full flex items-center justify-center">
+                            <img src="FUTA's Logo.jpeg" alt="My Logo" class="w-full h-full rounded-full object-cover"
+                                style="height:auto; border-radius: 50px;">
+                        </div>
+                        <div>
+                            <h1 class="text-lg font-bold text-gray-900">FUTA CRC Portal</h1>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-4">
+
+                        <div class="relative">
+                            <button onclick="toggleUserMenu()"
+                                class="flex items-center space-x-3 text-gray-700 hover:text-gray-900">
+                                <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                                    <span class="text-white text-sm font-medium">OF</span>
+                                </div>
+                                <span class="font-medium">Owolabi Feranmi</span>
+                                <div class="w-4 h-4 flex items-center justify-center">
+                                    <i class="ri-arrow-down-s-line"></i>
+                                </div>
+                            </button>
+
+                            <div id="user-menu"
+                                class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border py-2">
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile
+                                    Settings</a>
+                                <hr class="my-2">
+                                <button onclick="showUserLogin()"
+                                    class="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50">Sign
+                                    Out</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <button onclick="showLanding()"
+            class="fixed top-4 left-4 text-3xl font-bold hover:text-gray-900 text-3xl text-white text-sm flex items-center space-x-2 z-50 bg-primary px-3 py-2 rounded shadow">
+            <div class="w-4 h-4 flex items-center justify-center">
+                <i class="ri-arrow-left-line"></i>
+            </div>
+        </button>
+
+        <!-- Main Content -->
+        <main class="max-w-7xl mx-auto px-6 py-8">
+            <!-- Welcome Section -->
+            <div class="mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">Welcome back, Fefe!</h2>
+                <p class="text-gray-600">Manage your support tickets and submit new requests.</p>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                <div class="bg-white rounded-xl p-6 shadow-sm border">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm font-medium text-gray-600">Total Tickets</p>
+                            <p class="text-2xl font-bold text-gray-900">12</p>
+                        </div>
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                            <i class="ri-file-list-line text-blue-600 text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 shadow-sm border">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm font-medium text-gray-600">Open Tickets</p>
+                            <p class="text-2xl font-bold text-orange-600">5</p>
+                        </div>
+                        <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
+                            <i class="ri-time-line text-orange-600 text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 shadow-sm border">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm font-medium text-gray-600">In Progress</p>
+                            <p class="text-2xl font-bold text-blue-600">3</p>
+                        </div>
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                            <i class="ri-loader-line text-blue-600 text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 shadow-sm border">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm font-medium text-gray-600">Resolved</p>
+                            <p class="text-2xl font-bold text-green-600">4</p>
+                        </div>
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                            <i class="ri-check-line text-green-600 text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Create Ticket Button -->
+            <div class="mb-8">
+                <button onclick="showCreateTicket()"
+                    class="bg-primary text-white px-8 py-4 !rounded-button font-semibold hover:bg-blue-700 transition-colors flex items-center space-x-3 shadow-lg whitespace-nowrap">
+                    <div class="w-6 h-6 flex items-center justify-center">
+                        <i class="ri-add-line text-xl"></i>
+                    </div>
+                    <span>Create New Ticket</span>
+                </button>
+            </div>
+
+            <!-- Tickets Section -->
+            <div class="bg-white rounded-xl shadow-sm border">
+                <div class="p-6 border-b">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-semibold text-gray-900">My Tickets</h3>
+                        <div class="flex items-center space-x-3">
+                            </div>
+                            <button
+                                class="px-4 py-2 border border-gray-300 !rounded-button text-sm font-medium text-gray-700 hover:bg-gray-50 flex items-center space-x-2 whitespace-nowrap">
+                                <div class="w-4 h-4 flex items-center justify-center">
+                                    <i class="ri-filter-line"></i>
+                                </div>
+                                <span>Filter</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Create Ticket Page -->
+    <div id="create-ticket" class="hidden min-h-screen bg-gray-50">
+        <!-- Header -->
+        <header class="bg-white shadow-sm border-b">
+            <div class="max-w-4xl mx-auto px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <button onclick="showUserDashboard()"
+                            class="w-10 h-10 flex items-center justify-center text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full">
+                            <i class="ri-arrow-left-line text-xl"></i>
+                        </button>
+                        <h1 class="text-xl font-bold text-gray-900">Submit New Request</h1>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Form -->
+        <main class="max-w-4xl mx-auto px-6 py-8">
+            <div class="bg-white rounded-xl shadow-sm border p-8">
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Subject *</label>
+                            <input type="text"
+                                class="w-full px-4 py-3 border border-gray-300 !rounded-button focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                                placeholder="Brief description of your issue">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Category *</label>
+                            <div class="relative">
+                                <button type="button" onclick="toggleCategoryDropdown()"
+                                    class="w-full px-4 py-3 border border-gray-300 !rounded-button focus:ring-2 focus:ring-primary focus:border-transparent text-sm text-left flex items-center justify-between">
+                                    <span id="selected-category">Select a category</span>
+                                    <div class="w-4 h-4 flex items-center justify-center">
+                                        <i class="ri-arrow-down-s-line"></i>
+                                    </div>
+                                </button>
+                                <div id="category-dropdown"
+                                    class="hidden absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-lg">
+                                    <div class="py-2">
+                                        <button type="button" onclick="selectCategory('Technical Support')"
+                                            class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100">Technical
+                                            Support</button>
+                                        <button type="button" onclick="selectCategory('Academic')"
+                                            class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100">Academic</button>
+                                        <button type="button" onclick="selectCategory('Access Control')"
+                                            class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100">Access
+                                            Control</button>
+                                        <button type="button" onclick="selectCategory('Facilities')"
+                                            class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100">Facilities</button>
+                                        <button type="button" onclick="selectCategory('Financial')"
+                                            class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100">Financial</button>
+                                        <button type="button" onclick="selectCategory('Other')"
+                                            class="w-full px-4 py-2 text-left text-sm hover:bg-gray-100">Other</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Priority Level</label>
+                        <div class="flex space-x-4">
+                            <label class="flex items-center">
+                                <input type="radio" name="priority" value="low"
+                                    class="w-4 h-4 text-primary border-gray-300 focus:ring-primary">
+                                <span class="ml-2 text-sm text-gray-700">Low</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="priority" value="medium"
+                                    class="w-4 h-4 text-primary border-gray-300 focus:ring-primary" checked>
+                                <span class="ml-2 text-sm text-gray-700">Medium</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="priority" value="high"
+                                    class="w-4 h-4 text-primary border-gray-300 focus:ring-primary">
+                                <span class="ml-2 text-sm text-gray-700">High</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Description *</label>
+                        <textarea rows="6"
+                            class="w-full px-4 py-3 border border-gray-300 !rounded-button focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                            placeholder="Please provide detailed information about your issue or request..."></textarea>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Attachments</label>
+                        <div
+                            class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-primary transition-colors">
+                            <div
+                                class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="ri-upload-cloud-line text-gray-500 text-2xl"></i>
+                            </div>
+                            <p class="text-gray-600 mb-2">Drag and drop files here, or <button type="button"
+                                    class="text-primary hover:text-blue-700 font-medium">browse</button></p>
+                            <p class="text-xs text-gray-500">Supported formats: PDF, DOC, DOCX, JPG, PNG (Max 10MB)</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-end space-x-4 pt-6 border-t">
+                        <button type="button" onclick="showUserDashboard()"
+                            class="px-6 py-3 border border-gray-300 !rounded-button text-gray-700 font-medium hover:bg-gray-50 whitespace-nowrap">
+                            Cancel
+                        </button>
+                        <button type="button" onclick="showUserDashboard()"
+                            class="px-6 py-3 bg-primary text-white !rounded-button font-medium hover:bg-blue-700 whitespace-nowrap">
+                            Submit Ticket
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <!-- Ticket Details Page -->
+    <div id="ticket-details" class="hidden min-h-screen bg-gray-50">
+        <!-- Header -->
+        <header class="bg-white shadow-sm border-b">
+            <div class="max-w-6xl mx-auto px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <button onclick="showUserDashboard()"
+                            class="w-10 h-10 flex items-center justify-center text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full">
+                            <i class="ri-arrow-left-line text-xl"></i>
+                        </button>
+                        <div>
+                            <h1 class="text-xl font-bold text-gray-900">Ticket #TK-001</h1>
+                            <p class="text-sm text-gray-600">Internet Connection Issues in Hostel Block A</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-3">
+                        <span
+                            class="px-3 py-1 bg-orange-100 text-orange-800 text-sm font-medium rounded-full">Open</span>
+                        <button
+                            class="px-4 py-2 border border-gray-300 !rounded-button text-sm font-medium text-gray-700 hover:bg-gray-50 flex items-center space-x-2 whitespace-nowrap">
+                            <div class="w-4 h-4 flex items-center justify-center">
+                                <i class="ri-printer-line"></i>
+                            </div>
+                            <span>Print</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content -->
+        <main class="max-w-6xl mx-auto px-6 py-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Main Content -->
+                <div class="lg:col-span-2 space-y-6">
+                    <!-- Ticket Description -->
+                    <div class="bg-white rounded-xl shadow-sm border p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Description</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            The Wi-Fi connection in Hostel Block A has been extremely unstable for the past week.
+                            Students are experiencing frequent disconnections, slow speeds, and inability to connect to
+                            online classes. This is severely affecting our academic activities and research work. The
+                            issue seems to be affecting the entire block, not just individual rooms.
+                        </p>
+                    </div>
+
+                    <!-- Status Timeline -->
+                    <div class="bg-white rounded-xl shadow-sm border p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-6">Status Timeline</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-4">
+                                <div
+                                    class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="ri-add-line text-blue-600 text-sm"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-medium text-gray-900">Ticket Created</p>
+                                    <p class="text-sm text-gray-600">Submitted by John Doe</p>
+                                    <p class="text-xs text-gray-500">Jan 15, 2025 at 2:30 PM</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div
+                                    class="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="ri-eye-line text-yellow-600 text-sm"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-medium text-gray-900">Under Review</p>
+                                    <p class="text-sm text-gray-600">Assigned to Technical Support Team</p>
+                                    <p class="text-xs text-gray-500">Jan 15, 2025 at 3:15 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Responses -->
+                    <div class="bg-white rounded-xl shadow-sm border p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-6">Responses</h3>
+
+                        <div class="space-y-6">
+                            <!-- Admin Response -->
+                            <div class="border-l-4 border-primary pl-4">
+                                <div class="flex items-start justify-between mb-2">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                                            <span class="text-white text-sm font-medium">AS</span>
+                                        </div>
+                                        <div>
+                                            <p class="font-medium text-gray-900">Admin Support</p>
+                                            <p class="text-xs text-gray-500">Jan 15, 2025 at 4:20 PM</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-gray-700">
+                                    Thank you for reporting this issue. We have escalated this to our network
+                                    infrastructure team. They will be conducting a site visit tomorrow morning to
+                                    diagnose and resolve the connectivity issues in Hostel Block A.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Reply Form -->
+                        <div class="mt-8 pt-6 border-t">
+                            <h4 class="font-medium text-gray-900 mb-4">Add Response</h4>
+                            <textarea rows="4"
+                                class="w-full px-4 py-3 border border-gray-300 !rounded-button focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                                placeholder="Type your response here..."></textarea>
+                            <div class="flex justify-end mt-4">
+                                <button
+                                    class="px-6 py-2 bg-primary text-white !rounded-button font-medium hover:bg-blue-700 text-sm whitespace-nowrap">
+                                    Send Response
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="space-y-6">
+                    <!-- Ticket Info -->
+                    <div class="bg-white rounded-xl shadow-sm border p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Ticket Information</h3>
+                        <div class="space-y-3">
+                            <div>
+                                <p class="text-sm font-medium text-gray-600">Ticket ID</p>
+                                <p class="text-gray-900">#TK-001</p>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium text-gray-600">Status</p>
+                                <span
+                                    class="px-3 py-1 bg-orange-100 text-orange-800 text-sm font-medium rounded-full">Open</span>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium text-gray-600">Priority</p>
+                                <span
+                                    class="px-3 py-1 bg-red-100 text-red-800 text-sm font-medium rounded-full">High</span>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium text-gray-600">Category</p>
+                                <p class="text-gray-900">Technical Support</p>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium text-gray-600">Created</p>
+                                <p class="text-gray-900">Jan 15, 2025</p>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium text-gray-600">Last Updated</p>
+                                <p class="text-gray-900">Jan 15, 2025</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Attachments -->
+                    <div class="bg-white rounded-xl shadow-sm border p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Attachments</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center space-x-3 p-3 border border-gray-200 rounded-lg">
+                                <div class="w-8 h-8 bg-red-100 rounded flex items-center justify-center">
+                                    <i class="ri-file-pdf-line text-red-600"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium text-gray-900">network-issues.pdf</p>
+                                    <p class="text-xs text-gray-500">2.4 MB</p>
+                                </div>
+                                <button
+                                    class="w-6 h-6 flex items-center justify-center text-gray-400 hover:text-gray-600">
+                                    <i class="ri-download-line"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Admin Login Page -->
+    <div id="admin-login" class="hidden min-h-screen bg-gray-50 flex items-center justify-center px-6">
+        <div class="max-w-md w-full">
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <div class="text-center mb-8">
+                    <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <div class="w-8 h-8 flex items-center justify-center">
+                            <i class="ri-admin-line text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-900">Admin Login</h2>
+                    <p class="text-gray-600 mt-2">Access CRC management dashboard</p>
+                </div>
+
+                <form class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Admin Email</label>
+                        <input type="email"
+                            class="w-full px-4 py-3 border border-gray-300 !rounded-button focus:ring-2 focus:ring-secondary focus:border-transparent text-sm"
+                            placeholder="Enter admin email">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                        <div class="relative">
+                            <input type="password"
+                                class="w-full px-4 py-3 border border-gray-300 !rounded-button focus:ring-2 focus:ring-secondary focus:border-transparent text-sm pr-12"
+                                placeholder="Enter password">
+                            <button type="button"
+                                class="absolute right-3 top-1/2 transform -translate-y-1/2 w-6 h-6 flex items-center justify-center text-gray-400 hover:text-gray-600">
+                                <i class="ri-eye-line"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <label class="flex items-center">
+                            <input type="checkbox"
+                                class="w-4 h-4 text-secondary border-gray-300 !rounded-button focus:ring-secondary">
+                            <span class="ml-2 text-sm text-gray-600">Remember me</span>
+                        </label>
+                        <a href="#" class="text-sm text-secondary hover:text-red-700">Forgot password?</a>
+                    </div>
+
+                    <button type="button" onclick="showAdminDashboard()"
+                        class="w-full bg-secondary text-white py-3 !rounded-button font-semibold hover:bg-red-700 transition-colors whitespace-nowrap">
+                        Sign In
+                    </button>
+                </form>
+
+                <button onclick="showLanding()"
+                    class="mt-6 w-full text-gray-500 hover:text-gray-700 text-sm flex items-center justify-center space-x-2">
+                    <div class="w-4 h-4 flex items-center justify-center">
+                        <i class="ri-arrow-left-line"></i>
+                    </div>
+                    <span>Back to Home</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div id="admin-dashboard" class="hidden min-h-screen bg-gray-50">
+        <!-- Header -->
+        <header class="bg-white shadow-sm border-b">
+            <div class="max-w-7xl mx-auto px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10  rounded-full flex items-center justify-center">
+                            <img src="FUTA's Logo.jpeg" alt="My Logo" class="w-full h-full rounded-full object-cover"
+                                style="height:auto; border-radius: 50px;">
+                        </div>
+                        <div>
+                            <h1 class="text-lg font-bold text-gray-900">CRC Admin Dashboard</h1>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-4">
+                        <button
+                            class="relative w-10 h-10 flex items-center justify-center text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full">
+                            <i class="ri-notification-line text-xl"></i>
+                            <span
+                                class="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">8</span>
+                        </button>
+
+                        <div class="relative">
+                            <button onclick="toggleAdminMenu()"
+                                class="flex items-center space-x-3 text-gray-700 hover:text-gray-900">
+                                <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center">
+                                    <span class="text-white text-sm font-medium">AM</span>
+                                </div>
+                                <span class="font-medium">Admin Manager</span>
+                                <div class="w-4 h-4 flex items-center justify-center">
+                                    <i class="ri-arrow-down-s-line"></i>
+                                </div>
+                            </button>
+
+                            <div id="admin-menu"
+                                class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border py-2">
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Admin
+                                    Settings</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">User
+                                    Management</a>
+                                <hr class="my-2">
+                                <button onclick="showLanding()"
+                                    class="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50">Sign
+                                    Out</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <button onclick="showLanding()"
+            class="fixed top-4 left-4 text-3xl font-bold hover:text-gray-700 text-sm flex items-center space-x-2 z-50 bg-secondary px-3 py-2 rounded shadow">
+            <div class="w-4 h-4 flex items-center justify-center">
+                <i class="ri-arrow-left-line"></i>
+            </div>
+            <span></span>
+        </button>
+
+
+        <!-- Main Content -->
+        <main class="max-w-7xl mx-auto px-6 py-8">
+            <!-- Welcome Section -->
+            <div class="mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">CRC Management Dashboard</h2>
+                <p class="text-gray-600">Monitor and manage all support tickets and user requests.</p>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-6 mb-8">
+                <div class="bg-white rounded-xl p-6 shadow-sm border">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm font-medium text-gray-600">Total Tickets</p>
+                            <p class="text-2xl font-bold text-gray-900">156</p>
+                        </div>
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                            <i class="ri-file-list-line text-blue-600 text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 shadow-sm border">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm font-medium text-gray-600">Open</p>
+                            <p class="text-2xl font-bold text-orange-600">23</p>
+                        </div>
+                        <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
+                            <i class="ri-time-line text-orange-600 text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 shadow-sm border">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm font-medium text-gray-600">In Progress</p>
+                            <p class="text-2xl font-bold text-blue-600">41</p>
+                        </div>
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                            <i class="ri-loader-line text-blue-600 text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 shadow-sm border">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm font-medium text-gray-600">Resolved</p>
+                            <p class="text-2xl font-bold text-green-600">92</p>
+                        </div>
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                            <i class="ri-check-line text-green-600 text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 shadow-sm border">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm font-medium text-gray-600">Response Time</p>
+                            <p class="text-2xl font-bold text-purple-600">2.4h</p>
+                        </div>
+                        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                            <i class="ri-timer-line text-purple-600 text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tickets Management -->
+            <div class="bg-white rounded-xl shadow-sm border">
+                <div class="p-6 border-b">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-semibold text-gray-900">All Tickets</h3>
+                        <div class="flex items-center space-x-3">
+                            <div class="relative">
+                                <input type="text" placeholder="Search tickets..."
+                                    class="pl-10 pr-4 py-2 border border-gray-300 !rounded-button focus:ring-2 focus:ring-secondary focus:border-transparent text-sm">
+                                <div
+                                    class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 flex items-center justify-center">
+                                    <i class="ri-search-line text-gray-400"></i>
+                                </div>
+                            </div>
+                            <button onclick="toggleStatusFilter()"
+                                class="px-4 py-2 border border-gray-300 !rounded-button text-sm font-medium text-gray-700 hover:bg-gray-50 flex items-center space-x-2 whitespace-nowrap">
+                                <div class="w-4 h-4 flex items-center justify-center">
+                                    <i class="ri-filter-line"></i>
+                                </div>
+                                <span>Filter</span>
+                            </button>
+                            <button
+                                class="px-4 py-2 bg-secondary text-white !rounded-button text-sm font-medium hover:bg-red-700 flex items-center space-x-2 whitespace-nowrap">
+                                <div class="w-4 h-4 flex items-center justify-center">
+                                    <i class="ri-download-line"></i>
+                                </div>
+                                <span>Export</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-gray-50 border-b">
+                            <tr>
+                                <th class="text-left py-3 px-6 text-sm font-medium text-gray-600">Ticket ID</th>
+                                <th class="text-left py-3 px-6 text-sm font-medium text-gray-600">Subject</th>
+                                <th class="text-left py-3 px-6 text-sm font-medium text-gray-600">User</th>
+                                <th class="text-left py-3 px-6 text-sm font-medium text-gray-600">Category</th>
+                                <th class="text-left py-3 px-6 text-sm font-medium text-gray-600">Priority</th>
+                                <th class="text-left py-3 px-6 text-sm font-medium text-gray-600">Status</th>
+                                <th class="text-left py-3 px-6 text-sm font-medium text-gray-600">Created</th>
+                                <th class="text-left py-3 px-6 text-sm font-medium text-gray-600">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-4 px-6 text-sm font-medium text-gray-900">#TK-001</td>
+                                <td class="py-4 px-6 text-sm text-gray-900">Internet Connection Issues in Hostel Block A
+                                </td>
+                                <td class="py-4 px-6 text-sm text-gray-600">John Doe</td>
+                                <td class="py-4 px-6 text-sm text-gray-600">Technical Support</td>
+                                <td class="py-4 px-6">
+                                    <span
+                                        class="px-2 py-1 bg-red-100 text-red-800 text-xs font-medium rounded-full">High</span>
+                                </td>
+                                <td class="py-4 px-6">
+                                    <span
+                                        class="px-2 py-1 bg-orange-100 text-orange-800 text-xs font-medium rounded-full">Open</span>
+                                </td>
+                                <td class="py-4 px-6 text-sm text-gray-600">Jan 15, 2025</td>
+                                <td class="py-4 px-6">
+                                    <div class="flex items-center space-x-2">
+                                        <button
+                                            class="w-8 h-8 flex items-center justify-center text-blue-600 hover:bg-blue-50 rounded">
+                                            <i class="ri-eye-line"></i>
+                                        </button>
+                                        <button
+                                            class="w-8 h-8 flex items-center justify-center text-green-600 hover:bg-green-50 rounded">
+                                            <i class="ri-check-line"></i>
+                                        </button>
+                                        <button
+                                            class="w-8 h-8 flex items-center justify-center text-gray-600 hover:bg-gray-50 rounded">
+                                            <i class="ri-more-line"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-4 px-6 text-sm font-medium text-gray-900">#TK-002</td>
+                                <td class="py-4 px-6 text-sm text-gray-900">Library Access Card Not Working</td>
+                                <td class="py-4 px-6 text-sm text-gray-600">Sarah Wilson</td>
+                                <td class="py-4 px-6 text-sm text-gray-600">Access Control</td>
+                                <td class="py-4 px-6">
+                                    <span
+                                        class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded-full">Medium</span>
+                                </td>
+                                <td class="py-4 px-6">
+                                    <span
+                                        class="px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">In
+                                        Progress</span>
+                                </td>
+                                <td class="py-4 px-6 text-sm text-gray-600">Jan 14, 2025</td>
+                                <td class="py-4 px-6">
+                                    <div class="flex items-center space-x-2">
+                                        <button
+                                            class="w-8 h-8 flex items-center justify-center text-blue-600 hover:bg-blue-50 rounded">
+                                            <i class="ri-eye-line"></i>
+                                        </button>
+                                        <button
+                                            class="w-8 h-8 flex items-center justify-center text-green-600 hover:bg-green-50 rounded">
+                                            <i class="ri-check-line"></i>
+                                        </button>
+                                        <button
+                                            class="w-8 h-8 flex items-center justify-center text-gray-600 hover:bg-gray-50 rounded">
+                                            <i class="ri-more-line"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-4 px-6 text-sm font-medium text-gray-900">#TK-003</td>
+                                <td class="py-4 px-6 text-sm text-gray-900">Request for Course Registration Extension
+                                </td>
+                                <td class="py-4 px-6 text-sm text-gray-600">Michael Brown</td>
+                                <td class="py-4 px-6 text-sm text-gray-600">Academic</td>
+                                <td class="py-4 px-6">
+                                    <span
+                                        class="px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-full">Low</span>
+                                </td>
+                                <td class="py-4 px-6">
+                                    <span
+                                        class="px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-full">Resolved</span>
+                                </td>
+                                <td class="py-4 px-6 text-sm text-gray-600">Jan 12, 2025</td>
+                                <td class="py-4 px-6">
+                                    <div class="flex items-center space-x-2">
+                                        <button
+                                            class="w-8 h-8 flex items-center justify-center text-blue-600 hover:bg-blue-50 rounded">
+                                            <i class="ri-eye-line"></i>
+                                        </button>
+                                        <button
+                                            class="w-8 h-8 flex items-center justify-center text-green-600 hover:bg-green-50 rounded">
+                                            <i class="ri-check-line"></i>
+                                        </button>
+                                        <button
+                                            class="w-8 h-8 flex items-center justify-center text-gray-600 hover:bg-gray-50 rounded">
+                                            <i class="ri-more-line"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="p-6 border-t bg-gray-50">
+                    <div class="flex items-center justify-between">
+                        <p class="text-sm text-gray-600">Showing 1 to 10 of 156 results</p>
+                        <div class="flex items-center space-x-2">
+                            <button
+                                class="px-3 py-2 border border-gray-300 !rounded-button text-sm font-medium text-gray-700 hover:bg-white whitespace-nowrap">
+                                Previous
+                            </button>
+                            <button
+                                class="px-3 py-2 bg-primary text-white !rounded-button text-sm font-medium hover:bg-blue-700 whitespace-nowrap">
+                                1
+                            </button>
+                            <button
+                                class="px-3 py-2 border border-gray-300 !rounded-button text-sm font-medium text-gray-700 hover:bg-white whitespace-nowrap">
+                                2
+                            </button>
+                            <button
+                                class="px-3 py-2 border border-gray-300 !rounded-button text-sm font-medium text-gray-700 hover:bg-white whitespace-nowrap">
+                                3
+                            </button>
+                            <button
+                                class="px-3 py-2 border border-gray-300 !rounded-button text-sm font-medium text-gray-700 hover:bg-white whitespace-nowrap">
+                                Next
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script id="navigation-script">
+        function showLanding() {
+            hideAllPages();
+            document.getElementById('landing-page').classList.remove('hidden');
+        }
+
+        function showAbout() {
+            hideAllPages();
+            document.getElementById('about-section').classList.remove('hidden');
+        }
+
+        function showContact() {
+            hideAllPages();
+            document.getElementById('contact-section').classList.remove('hidden');
+        }
+
+        // Show Success Page
+        function showSuccessPage() {
+            hideAllPages();
+            document.getElementById('success-page').classList.remove('hidden');
+        }
+
+        function showUserLogin() {
+            hideAllPages();
+            document.getElementById('user-login').classList.remove('hidden');
+        }
+
+        function showStaffLogin() {
+            hideAllPages();
+            document.getElementById('staff-login').classList.remove('hidden');
+        }
+
+
+        function showUserRegister() {
+            hideAllPages();
+            document.getElementById('user-register').classList.remove('hidden');
+        }
+
+        function showStaffRegister() {
+            hideAllPages();
+            document.getElementById('staff-register').classList.remove('hidden');
+        }
+
+        function showUserDashboard() {
+            hideAllPages();
+            document.getElementById('user-dashboard').classList.remove('hidden');
+        }
+
+        function showCreateTicket() {
+            hideAllPages();
+            document.getElementById('create-ticket').classList.remove('hidden');
+        }
+
+        function showTicketDetails() {
+            hideAllPages();
+            document.getElementById('ticket-details').classList.remove('hidden');
+        }
+
+        function showAdminLogin() {
+            hideAllPages();
+            document.getElementById('admin-login').classList.remove('hidden');
+        }
+
+        function showAdminDashboard() {
+            hideAllPages();
+            document.getElementById('admin-dashboard').classList.remove('hidden');
+        }
+
+        function hideAllPages() {
+            const pages = ['landing-page', 'user-login', 'user-register', 'user-dashboard', 'create-ticket', 'ticket-details', 'admin-login', 'admin-dashboard', 'staff-login', 'staff-register', 'about-section', 'contact-section', 'success-page'];
+            pages.forEach(page => {
+                document.getElementById(page).classList.add('hidden');
+            });
+        }
+    </script>
+
+    <script id="dropdown-script">
+        function toggleUserMenu() {
+            const menu = document.getElementById('user-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function toggleAdminMenu() {
+            const menu = document.getElementById('admin-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function toggleCategoryDropdown() {
+            const dropdown = document.getElementById('category-dropdown');
+            dropdown.classList.toggle('hidden');
+        }
+
+        function selectCategory(category) {
+            document.getElementById('selected-category').textContent = category;
+            document.getElementById('category-dropdown').classList.add('hidden');
+        }
+
+        function toggleStatusFilter() {
+            console.log('Filter clicked');
+        }
+
+        document.addEventListener('click', function (event) {
+            const userMenu = document.getElementById('user-menu');
+            const adminMenu = document.getElementById('admin-menu');
+            const categoryDropdown = document.getElementById('category-dropdown');
+
+            if (userMenu && !event.target.closest('[onclick="toggleUserMenu()"]')) {
+                userMenu.classList.add('hidden');
+            }
+
+            if (adminMenu && !event.target.closest('[onclick="toggleAdminMenu()"]')) {
+                adminMenu.classList.add('hidden');
+            }
+
+            if (categoryDropdown && !event.target.closest('[onclick="toggleCategoryDropdown()"]')) {
+                categoryDropdown.classList.add('hidden');
+            }
+        });
+    </script>
+
+    <script>
+        // Handle form submission
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Example: Show success page and hide contact form
+            document.getElementById('contact-section').classList.add('hidden');
+            document.getElementById('success-page').classList.remove('hidden');
+        });
+    </script>
+
+
+
+</body>
+
+</html>
